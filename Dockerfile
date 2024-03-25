@@ -2,7 +2,7 @@ FROM golang:1.22 AS download-gotty
 
 RUN go install github.com/sorenisanerd/gotty@v1.5.0
 
-FROM docker:dind
+FROM docker:26-dind
 
 WORKDIR /app
 
