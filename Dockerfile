@@ -13,7 +13,7 @@ RUN mkdir /lib64 && ln -s /lib/libc.musl-x86_64.so.1 /lib64/ld-linux-x86-64.so.2
 
 # run docker containers inside this docker container.
 # therefore, each client is isolated from each other
-CMD ["/app/gotty", "-w", "/usr/local/bin/docker", "run", "-it", "--rm", "busybox"]
+CMD ["/app/gotty", "-w", "/usr/local/bin/docker", "run", "-m", "15M", "--cpu-quota", "5000", "-it", "--rm", "busybox"]
 
 EXPOSE 8080
 
