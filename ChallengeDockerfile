@@ -1,0 +1,10 @@
+# The basic dockerfile that is loaded for each console.
+# should take ~1MB per open console.
+FROM ubuntu:22.04 
+
+COPY SETUP.sh SETUP.sh
+RUN bash SETUP.sh
+RUN rm SETUP.sh
+
+CMD ["/bin/bash"]
+

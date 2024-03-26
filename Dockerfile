@@ -12,6 +12,8 @@ COPY --from=download-gotty /go/bin/gotty /app/gotty
 RUN mkdir /lib64 && ln -s /lib/libc.musl-x86_64.so.1 /lib64/ld-linux-x86-64.so.2
 
 COPY start-shell.sh start-shell.sh
+COPY ChallengeDockerfile Dockerfile
+COPY SETUP.sh SETUP.sh
 
 # run docker containers inside this docker container.
 # therefore, each client is isolated from each other
