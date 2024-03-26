@@ -4,13 +4,12 @@ set -e
 
 # This script is loaded by gotty, and is in charge of starting a jailed and virtualized console.
 # This script is loaded by "Dockerfile"
-# This script depends on "ChallengeDockerfile"
 
 CONTAINER_NAME="challenge-shell-$RANDOM"
 CONTAINER_TAG="webshell"
 TIMEOUT="300" # 300 seconds = 5 minutes
 
-# Build image from ChallengeDockerfile
+# Build image from the challenge's Dockerfile and SETUP.sh
 docker build --tag "$CONTAINER_TAG" .
 
 clear # clear output
